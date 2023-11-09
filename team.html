@@ -1,0 +1,21 @@
+{% extends 'base.html'  %}
+{% block body %}
+<div class="container text-center" >
+{% for i in obj %}
+
+<div class="card text-center mx-3 my-3 " style="width: 18rem;display: inline-block;">
+    
+    <img style="height: 250px;" src="{{i.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title text-center">{{i.title}}</h3>
+      <p class="card-text">{{i.para}}</p>
+      
+    </div>
+  </div>
+  {%  endfor %}
+</div>
+
+
+
+
+{% endblock %}

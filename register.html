@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER USER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
+</head>
+<body class="bg-light">
+    <h1 class="text-center mt-2">CREATE USER</h1>
+    <div class="container text-center col-8"  id="frm-div">
+   <form action="" method="post" >
+    {% csrf_token %}
+    <br>
+    {% for i in messages %}
+<h6 style="font-size: 0.8rem" class="text-danger text-center" >{{i}}</h6>
+{% endfor %}
+
+   <input class="a my-2 mx-2 col-6" type="text" name="first_name" placeholder="First name"> <br>
+   <input class="a my-2 mx-2 col-6" type="text"  name="last_name" placeholder="Last name" ><br>
+   <input class="a my-2 mx-2 col-6" type="text" name="username" placeholder="Username"><br>
+   <input class="a my-2 mx-2 col-6" type="email" name="email" placeholder="Email"  ><br>
+   <input class="a my-2 mx-2 col-6" type="password" name="password1" placeholder="Password" ><br>
+   <input class="a my-2 mx-2 col-6" type="password" name="password2" placeholder="Re-Enter Password" ><br> <br>
+    <input class="b bg-primary text-white" type="submit">
+    <br><br>
+</form>
+</div>
+
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        #frm-div{
+            margin-top: 100px;
+            border: 2px solid;
+            border-radius: 10px;
+            border-color:indianred ;
+            background-color: azure;
+        }
+        .a{
+            border-radius: 10px;
+            background-color: beige;
+            border: 1px solid;
+            height: 35px;
+        }
+        .a::placeholder{
+            text-align: center;
+            color: cadetblue;
+        }
+        .b{
+            border:  solid;
+            border-radius: 3px;
+            height: 50px;
+        }
+       </style>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'base.html'  %}
+
+{% block body %}
+<h1 class="text-center text-info">BOOK TICKET</h1><hr class="container">
+
+  
+<div class="container text-center " style="width: 60%;background-color: aquamarine;">
+    {% for i in messages %}
+  <h6 class="text-danger text-center">{{i}}</h6>
+  {% endfor %}
+<form class="mb-3" action="" method="post">
+    <div class="container" >
+  {% csrf_token %}
+  <input class="inpu col-8  my-3 mx-3 text-center" type="text" placeholder="FIRTS NAME" name="fn" ><br>
+  
+  <input class="inpu  col-8 my-3 mx-3 text-center" type="text" placeholder="SECOND NAME" name="sn"><br>
+
+  <input class="inpu  col-8 my-3 mx-3 text-center" type="number" placeholder="PHONE NUMBER" name="phone"><br>
+
+  <select style="color: rgb(53, 50, 50);" class=" col-8 inpu my-3 mx-3" name="s1" id="">
+    {% for i in team1 %}
+    <option style="text-align: center;" value="{{i}}">{{i}}</option>
+    {% endfor %}
+  </select><br>
+
+  <select style="color: rgb(53, 50, 50);" class=" col-8 inpu my-3 mx-3" name="s2" id="" >
+    {% for i in team2 %}
+    <option style="text-align: center;" value="{{i}}">{{i}}</option>
+        {% endfor %}
+  </select><br>
+ 
+  <input style="color: rgb(53, 50, 50);"  class=" col-8 inpu text-center my-3 mx-3" type="date"  name="date"><br>
+ 
+  <button  class="my-3 mx-3 bg-primary text-white col-5" type="submit" > SUBMIT</button>
+</div>
+</form>
+</div>
+
+<style>
+    .inpu{
+        background-color: rgb(241, 202, 202);
+        border-radius: 10px;
+        border: 1px solid;
+        border-color: rgb(218, 40, 40);
+    }
+    .inpu::placeholder{
+        color: rgb(53, 50, 50);
+        text-align: center;
+    }
+    button{
+        border: 1px solid  ;border-radius: 10px;border-color: black;
+    }
+</style>
+{% endblock %}
